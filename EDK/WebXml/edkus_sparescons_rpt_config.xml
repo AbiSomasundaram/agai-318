@@ -1,0 +1,77 @@
+<?xml version = "1.0"?>
+<Config>
+  <Context BusinessProcessID="" BusinessProcessName="ELAL" BusinessProcessDescription="Edk Developement" ComponentName="basrepairorder" ComponentDescription="Repair Order" ComponentPrefix="GAEDK" ActivityID="91110628" ActivityName="spares_cons_rept" ActivityDescription="Spares Consumption Report" UIName="sparescons_rpt" UIDescription="Spares Consumption Report" UIPrefix="SCP" UIGUID="8d282b99-5045-4d98-bee7-245d82454f35" HTMName="SPARES_CONS_REPTSPARESCONS_RPT" InitSrv="" FetchSrv="gaedkscpfetch_srv" DirectReportLaunchsrv="" ForProto="0" EntryPointOrDependent="0" DefaultTabName="" HTMLFor="extjs" />
+  <Controls>
+    <Control ControlName="hidden_int" ControlPrefix="" ControlType="edit" ControlOfHdrMlt="hiddencontrol" Visible="No" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="19" MaxLength="19" DecimalLength="8" DataType="Numeric" Precision="Qty" ControlDataFlow="IN" RowsPerGrid="0" TabName="" SectionName="" EnumeratedControl="" />
+    <Control ControlName="spr_cons_rep_ord" ControlPrefix="spr_co" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="40" MaxLength="40" DecimalLength="" DataType="Char" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+    <Control ControlName="spr_cons_supplier" ControlPrefix="spr_c0" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="120" MaxLength="120" DecimalLength="" DataType="Char" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+    <Control ControlName="spr_cons_spare_prt" ControlPrefix="spr_c1" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="40" MaxLength="40" DecimalLength="" DataType="Char" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+    <Control ControlName="spr_cons_warehouse" ControlPrefix="spr_c2" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="25" MaxLength="25" DecimalLength="" DataType="Char" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+    <Control ControlName="spr_cons_from_date" ControlPrefix="spr_c3" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="11" MaxLength="11" DecimalLength="" DataType="Date" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+    <Control ControlName="spr_cons_to_date" ControlPrefix="date" ControlType="edit" ControlOfHdrMlt="H" Visible="Yes" HiddenViewName="" HiddenViewNameDataType="" HiddenViewSize="" HiddenViewPrefix="" size="11" MaxLength="11" DecimalLength="" DataType="Date" Precision="" ControlDataFlow="IN" RowsPerGrid="1" TabName="" SectionName="search_sect" EnumeratedControl="" />
+  </Controls>
+  <Events>
+    <Event Name="gaedk_scp_fetch" ServiceName="gaedkscpfetch_srv" EventTitle="fetch" EventType="FETCH" TabName="" DataSavingTask="false" ReportType="" ReportFileName="" />
+    <Event Name="gaedk_scp_spr_cons_spare_prt" ServiceName="" EventTitle="Help on SPR_CONS_SPARE_PRT" EventType="HELP" TabName="" DataSavingTask="false" ReportType="" ReportFileName="" />
+    <Event Name="gaedk_scp_spr_cons_supplier" ServiceName="" EventTitle="Help on SPR_CONS_SUPPLIER" EventType="HELP" TabName="" DataSavingTask="false" ReportType="" ReportFileName="" />
+    <Event Name="gaedk_scp_spr_cons_warehouse" ServiceName="" EventTitle="Help on SPR_CONS_WAREHOUSE" EventType="HELP" TabName="" DataSavingTask="false" ReportType="" ReportFileName="" />
+    <Event Name="gaedk_scp_spre_cons_gen_rpt" ServiceName="gaedkscpspre_creport_srv" EventTitle="Generate Report" EventType="REPORT" TabName="" DataSavingTask="false" ReportType="DECISIONWORKS" ReportFileName="spares_cons_rept_gaedkscpgaedk_scp_spre_cons_gen_rpt_report.aspx" />
+  </Events>
+  <Services>
+    <Service ServiceName="gaedkscpfetch_srv">
+      <Segments>
+        <Segment Name="gaedkscp_fet_ft_hsg" SegType="False" SegFlow="flowInOut" SegFill="False">
+          <SegDI Name="ctxt_base_activity" Flow="flowInOut" ControlName="ctxt_base_activity" ViewName="ctxt_base_activity" />
+          <SegDI Name="ctxt_base_component" Flow="flowInOut" ControlName="ctxt_base_component" ViewName="ctxt_base_component" />
+          <SegDI Name="ctxt_base_ou" Flow="flowInOut" ControlName="ctxt_base_ou" ViewName="ctxt_base_ou" />
+          <SegDI Name="ctxt_base_ui" Flow="flowInOut" ControlName="ctxt_base_ui" ViewName="ctxt_base_ui" />
+          <SegDI Name="ctxt_extn_based_on" Flow="flowInOut" ControlName="ctxt_extn_based_on" ViewName="ctxt_extn_based_on" />
+          <SegDI Name="hidden_int" Flow="flowInOut" ControlName="hidden_int" ViewName="hidden_int" />
+          <SegDI Name="spr_cons_from_date" Flow="flowInOut" ControlName="spr_cons_from_date" ViewName="spr_cons_from_date" />
+          <SegDI Name="spr_cons_rep_ord" Flow="flowInOut" ControlName="spr_cons_rep_ord" ViewName="spr_cons_rep_ord" />
+          <SegDI Name="spr_cons_spare_prt" Flow="flowInOut" ControlName="spr_cons_spare_prt" ViewName="spr_cons_spare_prt" />
+          <SegDI Name="spr_cons_supplier" Flow="flowInOut" ControlName="spr_cons_supplier" ViewName="spr_cons_supplier" />
+          <SegDI Name="spr_cons_to_date" Flow="flowInOut" ControlName="spr_cons_to_date" ViewName="spr_cons_to_date" />
+          <SegDI Name="spr_cons_warehouse" Flow="flowInOut" ControlName="spr_cons_warehouse" ViewName="spr_cons_warehouse" />
+        </Segment>
+      </Segments>
+      <states />
+    </Service>
+    <Service ServiceName="gaedkscpspre_creport_srv">
+      <Segments>
+        <Segment Name="gaedkscp_spre_c_rep_hr_hsg" SegType="False" SegFlow="flowInOut" SegFill="False">
+          <SegDI Name="ctxt_base_activity" Flow="flowInOut" ControlName="ctxt_base_activity" ViewName="ctxt_base_activity" />
+          <SegDI Name="ctxt_base_component" Flow="flowInOut" ControlName="ctxt_base_component" ViewName="ctxt_base_component" />
+          <SegDI Name="ctxt_base_ou" Flow="flowInOut" ControlName="ctxt_base_ou" ViewName="ctxt_base_ou" />
+          <SegDI Name="ctxt_base_ui" Flow="flowInOut" ControlName="ctxt_base_ui" ViewName="ctxt_base_ui" />
+          <SegDI Name="ctxt_extn_based_on" Flow="flowInOut" ControlName="ctxt_extn_based_on" ViewName="ctxt_extn_based_on" />
+          <SegDI Name="hidden_int" Flow="flowIn" ControlName="hidden_int" ViewName="hidden_int" />
+          <SegDI Name="spr_cons_from_date" Flow="flowInOut" ControlName="spr_cons_from_date" ViewName="spr_cons_from_date" />
+          <SegDI Name="spr_cons_rep_ord" Flow="flowInOut" ControlName="spr_cons_rep_ord" ViewName="spr_cons_rep_ord" />
+          <SegDI Name="spr_cons_spare_prt" Flow="flowInOut" ControlName="spr_cons_spare_prt" ViewName="spr_cons_spare_prt" />
+          <SegDI Name="spr_cons_supplier" Flow="flowInOut" ControlName="spr_cons_supplier" ViewName="spr_cons_supplier" />
+          <SegDI Name="spr_cons_to_date" Flow="flowInOut" ControlName="spr_cons_to_date" ViewName="spr_cons_to_date" />
+          <SegDI Name="spr_cons_warehouse" Flow="flowInOut" ControlName="spr_cons_warehouse" ViewName="spr_cons_warehouse" />
+        </Segment>
+      </Segments>
+      <states />
+    </Service>
+  </Services>
+  <DataTransfer>
+    <LinkTask TaskName="gaedk_scp_spr_cons_spare_prt" TaskDescription="HELP ON SPR_CONS_SPARE_PRT" TaskType="HELP" ExtensionControl="" EzeeViewSPName="">
+      <LinkUI ParentActivity="spares_cons_rept" ParentUI="sparescons_rpt" ParentUIType="U" ChildActivity="prthlppart" ChildUI="prthlprefgenlinq" ChildUIType="B" LinkID="3180" LinkName="SPARESCONS_RPTGAEDK_SCP_SPR_CONS_SPARE_PRT">
+        <DataTransControl ParentControlName="spr_cons_spare_prt" ParentControlViewName="spr_cons_spare_prt" ChildControlName="mlthlpparttbl" ChildControlViewName="1" ControlDataFlow="OUT" LinkDataItem="partnomlt" />
+      </LinkUI>
+    </LinkTask>
+    <LinkTask TaskName="gaedk_scp_spr_cons_supplier" TaskDescription="HELP ON SPR_CONS_SUPPLIER" TaskType="HELP" ExtensionControl="" EzeeViewSPName="">
+      <LinkUI ParentActivity="spares_cons_rept" ParentUI="sparescons_rpt" ParentUIType="U" ChildActivity="supsyshlp" ChildUI="supsyshlpinq1" ChildUIType="B" LinkID="2805" LinkName="SPARESCONS_RPTGAEDK_SCP_SPR_CONS_SUPPLIER">
+        <DataTransControl ParentControlName="spr_cons_supplier" ParentControlViewName="spr_cons_supplier" ChildControlName="mltsupplierhelp" ChildControlViewName="1" ControlDataFlow="OUT" LinkDataItem="vendorcodemlt" />
+      </LinkUI>
+    </LinkTask>
+    <LinkTask TaskName="gaedk_scp_spr_cons_warehouse" TaskDescription="HELP ON SPR_CONS_WAREHOUSE" TaskType="HELP" ExtensionControl="" EzeeViewSPName="">
+      <LinkUI ParentActivity="spares_cons_rept" ParentUI="sparescons_rpt" ParentUIType="U" ChildActivity="syshlpstradmn" ChildUI="syshlpwhcodehlp" ChildUIType="B" LinkID="2616" LinkName="SPARESCONS_RPTGAEDK_SCP_SPR_CONS_WAREHOUSE">
+        <DataTransControl ParentControlName="spr_cons_warehouse" ParentControlViewName="spr_cons_warehouse" ChildControlName="whhlptbl" ChildControlViewName="1" ControlDataFlow="OUT" LinkDataItem="WHNOMLT" />
+      </LinkUI>
+    </LinkTask>
+  </DataTransfer>
+</Config>
